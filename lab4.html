@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планер</title>
+    <style>
+        /* Підключення кастомних шрифтів */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Контейнер для планера */
+        .planner-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Карточка задач */
+        .task-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-card h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .task-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Поля вводу */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Чекбокси */
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Контейнер для інструментів */
+        .tools {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tools button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tools button:hover {
+            background-color: #4cae4c;
+        }
+
+        /* Підготовка до адаптивності */
+        @media (max-width: 768px) {
+            .planner-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Мій планер</h1>
+
+<div class="planner-container">
+
+    <!-- Завдання 1 -->
+    <div class="task-card">
+        <h2>Запланувати зустріч</h2>
+        <p>Зустріч з командою о 14:00. Обговорення нового проекту.</p>
+        <input type="text" placeholder="Додаткові нотатки..." />
+        <div>
+            <input type="checkbox" id="task1">
+            <label class="checkbox-label" for="task1">Завдання виконано</label>
+        </div>
+    </div>
+
+    <!-- Завдання 2 -->
+    <div class="task-card">
+        <h2>Перевірити email</h2>
+        <p>Перевірити нові повідомлення та відповісти на важливі.</p>
+        <input type="text" placeholder="Додаткові нотатки..." />
+        <div>
+            <input type="checkbox" id="task2">
+            <label class="checkbox-label" for="task2">Завдання виконано</label>
+        </div>
+    </div>
+
+    <!-- Завдання 3 -->
+    <div class="task-card">
+        <h2>Написати звіт</h2>
+        <p>Написати звіт для керівництва по завершенню проекту.</p>
+        <textarea placeholder="Ваші нотатки або звіт..." rows="4"></textarea>
+        <div>
+            <input type="checkbox" id="task3">
+            <label class="checkbox-label" for="task3">Завдання виконано</label>
+        </div>
+    </div>
+
+    <!-- Завдання 4 -->
+    <div class="task-card">
+        <h2>Підготувати презентацію</h2>
+        <p>Підготувати слайди для презентації на зустрічі з інвесторами.</p>
+        <textarea placeholder="Додаткові нотатки..." rows="4"></textarea>
+        <div>
+            <input type="checkbox" id="task4">
+            <label class="checkbox-label" for="task4">Завдання виконано</label>
+        </div>
+    </div>
+
+</div>
+
+<!-- Панель інструментів -->
+<div class="tools">
+    <button>Зберегти</button>
+    <button>Додати нове завдання</button>
+</div>
+
+</body>
+</html>
