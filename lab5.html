@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <style>
+        /* Загальні стилі */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Стилі для контейнера */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Секція навігації */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: #fff;
+        }
+
+        /* Головний банер */
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            background-color: #e3e3e3; /* Світлий фон */
+            text-align: center;
+            color: #333; /* Чорний колір тексту */
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+
+        /* Секція про мене */
+        .about {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Секція проєктів */
+        .projects {
+            padding: 60px 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding-top: 30px;
+        }
+
+        .project-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Секція контактів */
+        .contact {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact form button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Навігація -->
+<header class="navbar">
+    <div class="container">
+        <a href="#">Головна</a>
+        <a href="#">Про мене</a>
+        <a href="#">Проєкти</a>
+        <a href="#">Контакти</a>
+    </div>
+</header>
+
+<!-- Головний банер -->
+<section class="banner">
+    <div>
+        <h1>Ласкаво просимо до мого портфоліо</h1>
+        <p>Я веб-розробник з досвідом створення сучасних та адаптивних веб-сайтів. Дізнайтесь більше про мої проєкти нижче!</p>
+    </div>
+</section>
+
+<!-- Секція Про мене -->
+<section class="about container">
+    <h2>Про мене</h2>
+    <p>Я маю багаторічний досвід у веб-розробці, спеціалізуюся на створенні інтуїтивних та візуально привабливих сайтів. Використовую останні технології, щоб забезпечити швидкодію та адаптивність сторінок.</p>
+</section>
+
+<!-- Секція Проєктів -->
+<section class="projects">
+    <div class="container">
+        <h2>Мої проєкти</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <img src="project1.jpg" alt="Проєкт 1">
+                <h3>Проєкт 1</h3>
+                <p>Опис першого проєкту.</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="Проєкт 2">
+                <h3>Проєкт 2</h3>
+                <p>Опис другого проєкту.</p>
+            </div>
+            <div class="project-item">
+                <img src="project3.jpg" alt="Проєкт 3">
+                <h3>Проєкт 3</h3>
+                <p>Опис третього проєкту.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Секція Контактів -->
+<section class="contact container">
+    <h2>Контактна інформація</h2>
+    <form>
+        <input type="text" placeholder="Ваше ім'я" required>
+        <input type="email" placeholder="Ваш email" required>
+        <textarea placeholder="Ваше повідомлення" rows="5" required></textarea>
+        <button type="submit">Надіслати</button>
+    </form>
+</section>
+
+</body>
+</html>
