@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна YouTube</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 90px;
+            margin-right: 10px;
+        }
+
+        .search-bar-container {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 8px 16px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .user-menu {
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+
+        /* Sidebar styles */
+        .container {
+            display: flex;
+            margin-top: 60px; /* Offset for fixed header */
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #fff;
+            padding: 10px;
+            border-right: 1px solid #ddd;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 14px;
+            color: #606060;
+            padding: 8px 0;
+            text-transform: uppercase;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sidebar .icon {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Content area styles */
+        .content {
+            flex: 1;
+            margin-left: 260px; /* Offset for sidebar */
+            padding: 20px;
+        }
+
+        .categories {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .category-button {
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .category-button:hover {
+            background-color: #ddd;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+        }
+
+        .video-info {
+            padding: 10px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .video-details {
+            font-size: 12px;
+            color: #606060;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo">
+    </div>
+    <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Пошук">
+        <button class="search-button">🔍</button>
+    </div>
+    <div class="user-menu">👤</div>
+</header>
+
+<!-- Sidebar and Content Container -->
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <a href="#"><span class="icon">🏠</span>Головна</a>
+            <a href="#"><span class="icon">🎥</span>YouTube Shorts</a>
+            <a href="#"><span class="icon">📺</span>Підписки</a>
+            <a href="#"><span class="icon">🎵</span>YouTube Music</a>
+        </div>
+        <div class="sidebar-section">
+            <a href="#"><span class="icon">📂</span>Ваш канал</a>
+            <a href="#"><span class="icon">⏳</span>Історія</a>
+            <a href="#"><span class="icon">📹</span>Ваші відео</a>
+            <a href="#"><span class="icon">📥</span>Переглянути пізніше</a>
+        </div>
+        <div class="sidebar-section">
+            <h3>Підписки</h3>
+            <a href="#"><span class="icon">🟡</span>WAS: Популярно...</a>
+            <a href="#"><span class="icon">🔵</span>TheDRJZ</a>
+            <a href="#"><span class="icon">🟢</span>ROZETKA</a>
+            <a href="#"><span class="icon">🔴</span>Клятий раціоналіст</a>
+            <a href="#">Показати більше</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Categories Section -->
+        <div class="categories">
+            <button class="category-button">Усі</button>
+            <button class="category-button">Ігри</button>
+            <button class="category-button">Музика</button>
+            <button class="category-button">Пряма трансляція</button>
+            <button class="category-button">Новини</button>
+            <button class="category-button">Фільми</button>
+            <!-- Add more categories as needed -->
+        </div>
+
+        <!-- Video Grid -->
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="thumbnail"></div>
+                <div class="video-info">
+                    <div class="video-title">Відео 1</div>
+                    <div class="video-details">78 тис. переглядів • 1 місяць тому</div>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="thumbnail"></div>
+                <div class="video-info">
+                    <div class="video-title">Відео 2</div>
+                    <div class="video-details">90 тис. переглядів • 2 тижні тому</div>
+                </div>
+            </div>
+            <!-- Add more video cards as needed -->
+        </div>
+    </main>
+</div>
+</body>
+</html>
