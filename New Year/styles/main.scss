@@ -1,0 +1,19 @@
+@import 'blocks/header/header';
+@import 'blocks/card/card';
+
+$page-background: url('../images/background.jpg');
+$font-main: 'Arial', sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+  background: $page-background no-repeat center center / cover;
+  color: #fff;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
